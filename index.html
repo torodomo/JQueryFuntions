@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery demo</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type="text/javascript">
+        console.log($())
+        $(document).ready(function() {
+            $('#addClass button').click(function() {
+                $('#addClass h1').addClass("selected");
+                $('#addClass p').addClass("highlight");
+            });
+            $('#Slidetoggle button').click(function() {
+                $('#Slidetoggle p').slideToggle("slow");
+            });
+            $('#Append button').click(function() {
+                $('#Append p').append(" 'This is add-on'");
+            });
+            $('#hide button').click(function() {
+                $('#hide p').hide("slow");
+                $('#hide h1').hide("fast");
+            });
+            $('#show button').click(function() {
+                $('#hide h1').show("fast");
+                $('#hide p').show("fast");
+            });
+            $('#before button').click(function() {
+                $("#after p").before($("#before p"));
+            });
+            $('#after button').click(function() {
+                $("#before h1").after($("#after p:first"));
+            });
+            $('#html button').click(function() {
+                $("#html p").html('This has been edited');
+            });
+        });
+    </script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="addClass">
+            <button type="button">AddClass</button>
+            <h1>AddClass</h1>
+            <p>Click the button to add class 'red' to the title and highlight this paragraph</p>
+        </div>
+
+        <div id="Slidetoggle">
+            <button type="button">Slidetoggle</button>
+            <h1>Slidetoggle</h1>
+            <p>Click the button to slidetoggle a hidden image</p>
+        </div>
+
+        <div id="Append">
+            <button type="button">Append</button>
+            <h1>Append</h1>
+            <p>Click the button to append a new paragraph</p>
+        </div>
+        <div id="hide">
+            <button type="button">Hide</button>
+            <h1>Hide</h1>
+            <p>Click the button to hide this paragraph</p>
+        </div>
+        <div id="show">
+            <button type="button">Show</button>
+            <h1>Show</h1>
+            <p>Click the button to show the last hidden paragraph</p>
+        </div>
+        <div id="before">
+            <button type="button">Before</button>
+            <h1>Before</h1>
+            <p>Click the button to move this p before next p</p>
+        </div>
+        <div id="after">
+            <button type="button">After</button>
+            <h1>After</h1>
+            <p>Click the button to move p after last h1</p>
+        </div>
+        <div id="html">
+            <button type="button">html</button>
+            <h1>HTML</h1>
+            <p>Click the button to edit html</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
